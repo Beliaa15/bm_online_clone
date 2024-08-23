@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -22,8 +21,11 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.ShapeDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldColors
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -32,9 +34,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.DarkGray
+import androidx.compose.ui.graphics.Color.Companion.Gray
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -49,6 +52,7 @@ import com.belia.bm_online_clone.ui.theme.BM_Online_cloneTheme
 import com.belia.bm_online_clone.ui.theme.DarkRed
 import com.belia.bm_online_clone.ui.theme.DarkRedFont
 import com.belia.bm_online_clone.ui.theme.DisabledButton
+import com.belia.bm_online_clone.ui.theme.GrayBorder
 
 
 class MainActivity : ComponentActivity() {
@@ -119,6 +123,9 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     fontWeight = FontWeight.Bold
                 )
             },
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedBorderColor = GrayBorder
+            ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp),
@@ -145,6 +152,9 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             },
             visualTransformation = if (isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedBorderColor = GrayBorder
+            ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp),
@@ -156,8 +166,8 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             modifier = modifier
                 .align(Alignment.Start)
                 .padding(start = 16.dp, top = 6.dp),
-            color = Color.DarkGray,
-            )
+            color = DarkGray,
+        )
 
         /*ClickableText(
             text = AnnotatedString(stringResource(id = R.string.frgt_usr_pwd)),
@@ -201,7 +211,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                 text = stringResource(id = R.string.need_help),
                 fontSize = 14.sp,
                 modifier = modifier.padding(end = 3.dp),
-                color = Color.DarkGray,
+                color = DarkGray,
             )
 
             Text(
@@ -253,7 +263,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     text = stringResource(R.string.our_products),
                     fontSize = 12.sp,
                     textAlign = TextAlign.Center,
-                    color = Color.DarkGray,
+                    color = DarkGray,
                 )
             }
             Column(
@@ -271,8 +281,8 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     text = stringResource(R.string.exchange_rate),
                     fontSize = 12.sp,
                     textAlign = TextAlign.Center,
-                    color = Color.DarkGray,
-                    )
+                    color = DarkGray,
+                )
             }
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -289,7 +299,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     text = stringResource(R.string.security_tips),
                     fontSize = 12.sp,
                     textAlign = TextAlign.Center,
-                    color = Color.DarkGray,
+                    color = DarkGray,
 
                     )
             }
@@ -308,7 +318,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     text = stringResource(R.string.nearest_branch_or_atm),
                     fontSize = 12.sp,
                     textAlign = TextAlign.Center,
-                    color = Color.DarkGray,
+                    color = DarkGray,
 
                     )
             }

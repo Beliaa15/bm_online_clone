@@ -13,3 +13,5 @@ val Pink40 = Color(0xFF7D5260)
 val DarkRed = Color(0xFFBE3547)
 val DarkRedFont = Color(0xFFBF4252)
 val DisabledButton = Color(0x4DBE3547)
+val GrayBorder = Color(0xB3878787)
+
